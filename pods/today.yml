@@ -1,0 +1,22 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment 
+metadata:
+ name: nginx-pod-sanyam
+
+spec:
+ replicas: 4 
+ template:
+  metadata:
+   labels:
+    app: hellonginx
+
+  spec: 
+   containers:
+    - name: p1
+      image: sanyam1000/sanyam-pod1:t1
+      imagePullPolicy: IfNotPresent
+   nodeSelector:
+      name: sanyam
+
+

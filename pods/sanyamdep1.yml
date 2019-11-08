@@ -1,0 +1,20 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata: 
+ name: sanyam-deployment1
+
+spec:
+ replicas: 2 
+ template:
+  metadata:
+   labels:
+    app: newdep222
+
+  spec:                     
+   containers: 
+    - name: c1
+      image: nginx
+      ports:
+       - containerPort: 80
+      imagePullPolicy: IfNotPresent
