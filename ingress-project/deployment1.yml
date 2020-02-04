@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  namespace: ingress-nginx
+  labels:
+    app: dp1
+  name: dp1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dp1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: dp1
+    spec:
+      containers:
+      - image: muditdocker00/apps:v1
+        name: nginx
+        resources: {}
+status: {}
